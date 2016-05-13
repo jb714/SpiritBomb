@@ -1,0 +1,92 @@
+<html>
+
+  <head>
+    <title>Spirit Bomb</title>
+
+    <!-- Load angular -->
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+
+    <script src="./app/app.js"></script>
+    <script src="./app/controllers.js"></script>
+    <!-- styling -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+
+  <body ng-app='spiritBomb'>
+
+<div id="headerBar">
+
+    <img class="sidebarImg" id="topImg" src="assets/SpiritBombAlone.jpeg"><h1 id='appTitle'>Spirit Bomb <small>Crowdfunding. Concentrated.</small></h1>
+</div>
+
+  <div id="navBar">
+    <p class="navBarItem">Login</p>
+    <p class="navBarItem">Forum</p>
+    <p class="navBarItem">Archives</p>
+    <p class="navBarItem">About</p>
+  </div>
+
+  <div id="opponentContent">
+    <!--placeholder for opponent code -->
+    
+    <h2>Opponent of the Day:</h2>
+    <div id="opponentBox">
+    </div>
+  
+
+    <!--comment box code -->
+    <div id="commentArea" ng-controller='commentsCtrl'>
+    <h3>Comments:</h3>
+    <div id="commentBox">
+      <p ng-repeat="comment in comments">{{ comment }}</p>
+    </div>
+
+    <input type="text" placeholder="Comments" class="textAreas" ng-model="inputText"></input>
+    <input type="submit" class="submission" ng-click="postComment()"></input>
+
+    </div>
+  </div>
+
+  <div id="characterBar" ng-controller='mainCtrl'>
+
+    <h4 id="lift">Lift your hands: </h4>
+    <div class="charBarImg">
+      <img class="sidebarImg" src="./assets/PeopleOfEarth.png">
+      <p>People of Earth: ${{opponentValue * .05}}</p>
+    </div>
+
+    <div class="charBarImg">
+      <img class="sidebarImg" src="./assets/YamchaRoshi.png">
+      <p>Yamcha and Roshi: ${{opponentValue * .10}}</p>
+    </div>
+
+    <div class="charBarImg">
+      <img class="sidebarImg" src="./assets/PiccoloKrillin.png">
+       <p>Piccolo and Krillin: ${{opponentValue * .15}}</p>
+    </div>
+
+     <div class="charBarImg">
+      <img class="sidebarImg" src="./assets/gotenTrunks.png">
+       <p>Goten and Trunks: ${{opponentValue * .20}}</p>
+    </div>
+
+    <div class="charBarImg">
+      <img class="sidebarImg" src="./assets/Gohan.jpg">
+      <p>Gohan: ${{opponentValue * .23}}</p>
+    </div>
+
+     <div class="charBarImg">
+      <img class="sidebarImg" src="./assets/Vegeta.png">
+      <p>Vegeta: ${{opponentValue * .27}}</p>
+    </div>
+
+
+  </div>
+
+  </body>
+
+
+</html>

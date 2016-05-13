@@ -1,0 +1,87 @@
+body{
+  background-color: #EFEFEF;
+}
+
+/*Top level content (navbar and above)*/
+#headerBar{
+  background-color: black;
+}
+
+#navBar{
+  background-color: #424242;
+  height: 20px;
+  text-align: center;
+}
+
+.navBarItem{
+  display: inline-block;
+  margin-left: 20px;
+  color: white;
+}
+
+
+#appTitle{
+  color: white;
+  display: inline-block;
+}
+
+#topImg{
+  display: inline-block;
+}
+
+/*Midlevel content */
+#content{
+  display: inline-block;
+  width: 800px;
+  height: 1500px;
+}
+
+.submission{
+  background-color: #00CCD6;
+}
+
+/*Opponent area */
+#opponentContent{
+  display: inline-block;
+  margin-top: 75px;
+  margin-left: 25px;
+}
+#opponentBox{
+  display: inline-block;
+  background-color: #424242;
+  border: solid black;
+  width: 500px;
+  height: 200px;
+  overflow-y: auto;
+  background-color:;
+}
+/*Comment Box*/
+
+
+
+#commentBox{
+  border: solid black;
+  background-color: white;
+  width: 400px;
+  height: 100px;
+  overflow-y: auto;
+}
+
+/*text areas throughout app*/
+.textAreas{
+  background-color: black;
+  color: white;
+}
+
+/*Character bar content */
+#characterBar{
+  text-align: center;
+  display: inline-block;
+  background-color: black;
+  color: white;
+  float: right;
+}
+.sidebarImg{
+  height: 200px;
+  width: 200px;
+}
