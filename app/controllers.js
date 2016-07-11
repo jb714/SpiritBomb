@@ -71,4 +71,51 @@ var spiritBombControllers = angular.module('spiritBombControllers', [])
     $scope.comments.splice($index, 1)
   }
 
+  $scope.postUser = function(){
+    var newUser = {
+      firstName: $scope.firstname,
+      lastName: $scope.lastname,
+      email: $scope.eMail,
+      password: $scope.pw
+
+    }
+
+    console.log(newUser);
+
+    $http.post('/signup', newUser)
+
+       .success(function(data, status, headers, config){
+        console.log("Success!!");
+      })
+
+      .error(function(data, status) {
+        console.log("Error signing up")
+      })
+
+      $scope.firstname = '';
+      $scope.lastname = '';
+      $scope.eMail = '';
+      $scope.pw = '';
+  }
+
+  $scope.checkUser = function(){
+    
+    var aUser = {
+      email: $scope.inputEmail,
+      password: $scope.inputPW
+    }
+
+    $http.post('/signin', aUser)
+
+    .success(function(data, status, headers, config){
+        console.log("Success!!");
+    })
+
+      .error(function(data, status) {
+        console.log("Error signing in")
+        console.log(data)
+        console.log(newUser)
+      })
+  }
+
 })
