@@ -1,1 +1,1 @@
-var spiritBomb = angular.module('spiritBomb',['spiritBombControllers'])
+var spiritBomb = angular.module('spiritBomb',['spiritBombControllers', 'spiritBombServices'])

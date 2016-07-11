@@ -9,80 +9,98 @@
 
     <script src="./app/app.js"></script>
     <script src="./app/controllers.js"></script>
+    <script src="./app/services.js"></script>
     <!-- styling -->
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
   </head>
 
 
-  <body ng-app='spiritBomb'>
+  <body ng-app='spiritBomb' ng-controller='mainCtrl'>
 
 <div id="headerBar">
 
-    <img class="sidebarImg" id="topImg" src="assets/SpiritBombAlone.jpeg"><h1 id='appTitle'>Spirit Bomb <small>Crowdfunding. Concentrated.</small></h1>
-</div>
-
-  <div id="navBar">
     <p class="navBarItem">Login</p>
     <p class="navBarItem">Forum</p>
     <p class="navBarItem">Archives</p>
     <p class="navBarItem">About</p>
+    <img class="sidebarImg" id="topImg" src="assets/SpiritBombAlone.jpeg"><h1 id='appTitle'>Spirit Bomb <small>Crowdfunding. Concentrated.</small></h1>
+</div>
+
+  <div id="navBar">
+
   </div>
+
 
   <div id="opponentContent">
     <!--placeholder for opponent code -->
     
-    <h2>Opponent of the Day:</h2>
+    <h2><strong>Currently Featured:</strong></h2>
     <div id="opponentBox">
-    </div>
-  
+      <div id="opponentHead">
+      <h3 id="opponentTitle"><strong>Help us purchase the SpiritBomb.com domain name!</strong></h3>
+      <img class="sidebarImg" id="opponentImg" src="assets/domainPricePic.png">
+      <br/>
+      <br/>
+      </div>
+      
+      <!-- Ideally, the text below will be generated/persisted through our database that generates the topic/theme being contributed to. A photo the the topic and the text body -->
 
+
+
+      <p class="opponentText">We're looking to set up shop at SpiritBomb.com (it just has that ring to it; you know?) and need your help in buying the domain! As of now, the domain is priced at $3,199 (with tax, that will exceed $3200). From the purchase of the domain onwards, all content featured as subjects for SpiritBombs will be community led/voted initiatives.</p> 
+      <p class="opponentText">First, we're looking to raise $160, so that the kind people of earth will raise their hands! Please consider contributing to help us meet our goal.</p>
+        
+    </div>
+
+    <h2>Hands Raised: ${{ amountRaised }} of ${{ opponentValue }}</h2>
     <!--comment box code -->
     <div id="commentArea" ng-controller='commentsCtrl'>
     <h3>Comments:</h3>
     <div id="commentBox">
-      <p ng-repeat="comment in comments">{{ comment }}</p>
+      <p ng-repeat="comment in comments" ng-click="deleteComment($index)">{{ comment }}</p>
     </div>
-
+    
     <input type="text" placeholder="Comments" class="textAreas" ng-model="inputText"></input>
     <input type="submit" class="submission" ng-click="postComment()"></input>
 
     </div>
   </div>
 
-  <div id="characterBar" ng-controller='mainCtrl'>
+  <div id="characterBar">
 
-    <h4 id="lift">Lift your hands: </h4>
+    <h4 id="lift">Lift your hands! </h4>
     <div class="charBarImg">
-      <img class="sidebarImg" src="./assets/PeopleOfEarth.png">
-      <p>People of Earth: ${{opponentValue * .05}}</p>
+      <img class="sidebarImg" src="./assets/PeopleOfEarth.png"> 
     </div>
-
+    <p class="raiseCost">People of Earth: ${{opponentValue * .05}}</p>
     <div class="charBarImg">
       <img class="sidebarImg" src="./assets/YamchaRoshi.png">
-      <p>Yamcha and Roshi: ${{opponentValue * .10}}</p>
     </div>
+    <p class="raiseCost">Yamcha and Roshi: ${{opponentValue * .10}}</p>
 
     <div class="charBarImg">
       <img class="sidebarImg" src="./assets/PiccoloKrillin.png">
-       <p>Piccolo and Krillin: ${{opponentValue * .15}}</p>
     </div>
+     <p class="raiseCost">Piccolo and Krillin: ${{opponentValue * .15}}</p>
 
      <div class="charBarImg">
       <img class="sidebarImg" src="./assets/gotenTrunks.png">
-       <p>Goten and Trunks: ${{opponentValue * .20}}</p>
     </div>
+       <p class="raiseCost">Goten and Trunks: ${{opponentValue * .20}}</p>
 
     <div class="charBarImg">
       <img class="sidebarImg" src="./assets/Gohan.jpg">
-      <p>Gohan: ${{opponentValue * .23}}</p>
     </div>
+    <p class="raiseCost">Gohan: ${{opponentValue * .23}}</p>
 
      <div class="charBarImg">
       <img class="sidebarImg" src="./assets/Vegeta.png">
-      <p>Vegeta: ${{opponentValue * .27}}</p>
     </div>
-
+          <p class="raiseCost">Vegeta: ${{opponentValue * .27}}</p>
+    <!--placeholders for monetary contributions -->
+    <input id="contributionField" type="number" placeholder="$ to contribute" ng-model="contribution">
+    <input class="submission" type="submit" value="Raise Hands" ng-click="raiseHands(contribution)">
 
   </div>
 

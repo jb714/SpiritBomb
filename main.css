@@ -1,5 +1,6 @@
 body{
   background-color: #EFEFEF;
+  font-family: arial;
 }
 
 /*Top level content (navbar and above)*/
@@ -15,7 +16,9 @@ body{
 
 .navBarItem{
   display: inline-block;
-  margin-left: 20px;
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
   color: white;
 }
 
@@ -41,20 +44,39 @@ body{
 }
 
 /*Opponent area */
+#opponentHead{
+  background-color: #424242
+}
 #opponentContent{
   display: inline-block;
-  margin-top: 75px;
-  margin-left: 25px;
+  margin-top: 60px; 
+  margin-left: 70px;
 }
 #opponentBox{
   display: inline-block;
-  background-color: #424242;
+  color: black;
+  background-color: white;
   border: solid black;
-  width: 500px;
-  height: 200px;
+  width: 800px;
+  height: 400px;
   overflow-y: auto;
   background-color:;
 }
+
+#opponentTitle{
+  text-align: center;
+  color: #00CCD6;
+}
+#opponentImg{
+  width: 700px;
+  margin-left: 40px;
+}
+
+.opponentText{
+  text-align: center;
+}
+
+
 /*Comment Box*/
 
 
@@ -74,14 +96,35 @@ body{
 }
 
 /*Character bar content */
+
+#lift{
+  color: black;
+}
+
+.raiseCost{
+  color: black;
+}
+
 #characterBar{
   text-align: center;
   display: inline-block;
-  background-color: black;
   color: white;
   float: right;
+  margin-top: 80px;
+}
+.charBarImg{
+  border: solid black;
+  background-color: black;
+  margin: 10px;
 }
 .sidebarImg{
+  padding: 5px;
+  background-color: black;
+  border-radius: 10%;
   height: 200px;
   width: 200px;
+}
+
+#contributionField{
+  color: black;
 }
