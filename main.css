@@ -113,16 +113,18 @@ body{
   margin-top: 80px;
 }
 .charBarImg{
-  border: solid black;
-  background-color: black;
-  margin: 10px;
+/*  border: solid black;*/
+  margin: 0px;
+/*  background-color: black;*/
+/*  margin: 10px;*/
 }
 .sidebarImg{
-  padding: 5px;
+
   background-color: black;
+  border: solid black;
   border-radius: 10%;
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
 }
 
 #contributionField{
