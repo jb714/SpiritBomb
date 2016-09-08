@@ -6,27 +6,38 @@ var spiritBombControllers = angular.module('spiritBombControllers', [])
   $scope.amountRaised = 0;
   $scope.contribution;
 
-  $scope.raiseHands = function(input){
-    $scope.amountRaised = $scope.amountRaised + input;
+  $scope.raiseHands = function(contribution){
+    $scope.amountRaised = $scope.amountRaised + contribution;
 
-
-    if($scope.amountRaised >= $scope.opponentValue){
-      raisedValue = $scope.amountRaised;
-      alert("You have raised: $" + raisedValue + ". Goku launched the SpiritBomb!");
-      $scope.contribution='';
-      return;
-    }
     if($scope.contribution > $scope.opponentValue * .27){
       alert("Vegeta raised his hands");
-      $scope.contribution='';
-      return;
+      $scope.contribution= '';
     }
-    if($scope.contribution > $scope.opponentValue * .23 && $scope.contribution < $scope.opponentValue * .27){
+    else if($scope.contribution > $scope.opponentValue * .23){
       alert("Gohan contributed to the Spirit Bomb");
-      $scope.contribution='';
-      return;
+      $scope.contribution= '';
+    }
+     else if($scope.contribution > $scope.opponentValue * .20){
+      alert("Gohan and Trunks chipped in!");
+      $scope.contribution= '';
+    }
+    else if($scope.contribution > $scope.opponentValue * .15){
+      alert("Piccolo and Krillin raise the roof.");
+      $scope.contribution= '';
+    }
+    else if($scope.contribution > $scope.opponentValue * .10){
+      alert("Roshi and Yamcha are with it. Hands Raised.");
+      $scope.contribution= '';
+    }
+    else if($scope.contribution >= $scope.opponentValue * .05){
+      alert("Let's do it! People of Earth raised their hands");
+      $scope.contribution= '';
     }
 
+    if($scope.amountRaised >= $scope.opponentValue){
+      alert("You have raised: $" + $scope.amountRaised + ". Goku launched the SpiritBomb!");
+      $scope.contribution = '';
+    }
 
   }
 

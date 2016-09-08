@@ -56,7 +56,8 @@ body{
   display: inline-block;
   color: black;
   background-color: white;
-  border: solid black;
+  border: solid black 10px;
+  border-radius: 5%;
   width: 800px;
   height: 400px;
   overflow-y: auto;
