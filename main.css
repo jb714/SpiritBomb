@@ -131,3 +131,17 @@ body{
 #contributionField{
   color: black;
 }
+
+
+#footerBar{
+  height: 100px;
+  background-color: black;
+  clear: both;
+}
+
+#lowBar{
+  background-color: #424242;
+  height: 20px;
+  text-align: center;
+  clear:both;
+}
