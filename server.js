@@ -4,6 +4,7 @@ var mongoose       = require('mongoose');
 var db             = require('./config/db');
 var bodyParser     = require('body-parser');
 var morgan         = require('morgan');
+var stripePayments = require('./app/stripePayments')
 
 //Has to be used before the routes are loaded!
 app.use(bodyParser.urlencoded({extended: true}));
