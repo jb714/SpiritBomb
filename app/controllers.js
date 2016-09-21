@@ -1,5 +1,17 @@
 var spiritBombControllers = angular.module('spiritBombControllers', [])
 
+.controller('paymentsCtrl', function($scope) {
+
+    $scope.stripeCallback = function (code, result) {
+      if(result.error) {
+        window.alert('Payment error:' + result.error.message);
+      }
+      else {
+        window.alert('Payment successful!' + result.id);
+      }
+    }
+  })
+
 .controller('mainCtrl', function($scope, $http){
   $scope.opponentValue = 3200;
   $scope.opponentValueCopy = 3200;
@@ -43,6 +55,7 @@ var spiritBombControllers = angular.module('spiritBombControllers', [])
 
 })
 
+
 .controller('commentsCtrl', function($scope, $http){
 
    $scope.comments = [];
@@ -66,9 +79,7 @@ var spiritBombControllers = angular.module('spiritBombControllers', [])
       })
 
       .error(function(data, status) {
-        console.log("Stupid serialization difference..")
-        console.log(data)
-        console.log(comment)
+        alert("Please sign-in to post")
       })
  
 
@@ -100,7 +111,7 @@ var spiritBombControllers = angular.module('spiritBombControllers', [])
       })
 
       .error(function(data, status) {
-        console.log("Error signing up")
+        alert("Error signing up");
       })
 
       $scope.firstname = '';
@@ -119,14 +130,14 @@ var spiritBombControllers = angular.module('spiritBombControllers', [])
     $http.post('/signin', aUser)
 
     .success(function(data, status, headers, config){
-        console.log("Success!!");
+        var token = data;
+        console.log(token);
     })
 
       .error(function(data, status) {
         console.log("Error signing in")
-        console.log(data)
-        console.log(newUser)
       })
   }
+
 
 })

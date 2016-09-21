@@ -7,14 +7,17 @@
     <script src="libs/angular/angular.js"></script>
     <script src="libs/angular-route/angular-route.js"></script>
 
+    <!-- Load angular payments -->
+    <script src="libs/angular-payments/lib/angular-payments.js"></script>
+
+    <!-- USING ANGULAR UI BOOTSTRAP HERE -->
+    <!-- <script src="./angular-ui-bootstrap"></script> -->
+
     <script src="./app/app.js"></script>
     <script src="./app/controllers.js"></script>
     <script src="./app/services.js"></script>
     <!-- Stripe stuff -->
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-    <script type="text/javascript">
-  Stripe.setPublishableKey('pk_test_U3lEgdrH4TuABqUB9XfTOaIU');
-    </script>
     <!-- styling -->
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
@@ -25,7 +28,7 @@
 
 <div id="headerBar">
 
-    <!-- STARTING POINT!!!!!!! Sleep well :) -->
+    <!-- STARTING POINT FOR MODAL!!!!!!! Sleep well :) -->
     <a class="navBarItem" data-toggle="modal" href=>Login</a>
     <a class="navBarItem">Forum</a>
     <a class="navBarItem">Archives</a>
@@ -103,48 +106,6 @@
 
     <br>
     <br>
-    <p>STRIPE placeholder :)</p>
-
-    <form action="" method="POST" id="payment-form">
-  <span class="payment-errors"></span>
-
-  <div class="form-row">
-    <label>
-      <span>First Name</span>
-      <input type="text" size="20" data-stripe="first">
-    </label>
-       <label>
-      <span>Last Name</span>
-      <input type="text" size="20" data-stripe="last">
-    </label>
-  </div>
-
-  <div class="form-row">
-    <label>
-      <span>Card Number</span>
-      <input type="text" size="20" data-stripe="number">
-    </label>
-  </div>
-
-  <div class="form-row">
-    <label>
-      <span>Expiration (MM/YY)</span>
-      <input type="text" size="2" data-stripe="exp_month">
-    </label>
-    <span> / </span>
-    <input type="text" size="2" data-stripe="exp_year">
-  </div>
-
-  <div class="form-row">
-    <label>
-      <span>CVC</span>
-      <input type="text" size="4" data-stripe="cvc">
-    </label>
-  </div>
-
-  <input type="submit" class="submit" value="Submit Payment">
-</form>
-    
 
   </div>
 
@@ -187,6 +148,25 @@
     <input class="submission" type="submit" value="Raise Hands" ng-click="raiseHands(contribution)">
 
   </div>
+
+<!-- PAYMENTS STUFF -->
+  <div id ="payments" ng-contoller="paymentsCtrl">
+    <p>STRIPE placeholder :)</p>
+    <form stripe-form="stripeCallback">
+    <input ng-model="name" placeholder="Full Name" />
+      <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card" />
+      <input ng-model="expiry" placeholder="Expiration" payments-format="expiry" payments-validate="expiry"/>
+      <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc"/>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div ng-if="form.card.$invalid">Error: Invalid card number!</div>
+    <div ng-if="form.expiry.$invalid">Error: Invalid expiration date!</div>
+    <div ng-if="form.cvc.$invalid">Error: Invalid CVC!</div>
+
+  </div>
+
+
 
   <div id="lowBar">
   </div>
