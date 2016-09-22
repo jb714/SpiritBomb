@@ -47,7 +47,7 @@ hr{
 }
 
 .submission{
-  background-color: #00CCD6;
+  background-color: #4FF8FD;
 }
 
 /*Opponent area */
@@ -117,7 +117,7 @@ hr{
   width: 200px;
   border: solid black;
   border-radius: 2%;
-  background-color: #00CCD6;
+  background-color: #4FF8FD;
   text-align: center;
   display: inline-block;
   color: white;
