@@ -3,6 +3,13 @@ body{
   font-family: arial;
 }
 
+hr{
+  background-color: #FFD900;
+  border-radius: 100%;
+  height: 10px;
+  width: 75%;
+}
+
 /*Top level content (navbar and above)*/
 #headerBar{
   background-color: black;
@@ -107,6 +114,10 @@ body{
 }
 
 #characterBar{
+  width: 200px;
+  border: solid black;
+  border-radius: 2%;
+  background-color: #00CCD6;
   text-align: center;
   display: inline-block;
   color: white;
