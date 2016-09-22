@@ -1,4 +1,4 @@
-var spiritBombControllers = angular.module('spiritBombControllers', [])
+var spiritBombControllers = angular.module('spiritBombControllers', ['spiritBombServices'])
 
 .controller('paymentsCtrl', function($scope) {
 
@@ -93,26 +93,30 @@ var spiritBombControllers = angular.module('spiritBombControllers', [])
     $scope.comments.splice($index, 1)
   }
 
+})
+
+
+.controller('authCtrl', function($scope, $http){
+
   $scope.postUser = function(){
     var newUser = {
       firstName: $scope.firstname,
       lastName: $scope.lastname,
       email: $scope.eMail,
       password: $scope.pw
-
     }
 
-    console.log(newUser);
 
     $http.post('/signup', newUser)
-
+  
        .success(function(data, status, headers, config){
-        console.log("Success!!");
+        console.log(data);
       })
 
       .error(function(data, status) {
         alert("Error signing up");
       })
+
 
       $scope.firstname = '';
       $scope.lastname = '';
@@ -138,6 +142,4 @@ var spiritBombControllers = angular.module('spiritBombControllers', [])
         console.log("Error signing in")
       })
   }
-
-
 })
