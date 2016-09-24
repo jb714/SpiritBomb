@@ -26,21 +26,22 @@
 
   <body ng-app='spiritBomb' ng-controller='mainCtrl'>
 
-<div id="headerBar">
+  
+    <div id="headerBar">
 
     <!-- STARTING POINT FOR MODAL!!!!!!! Sleep well :) -->
-    <a class="navBarItem" data-toggle="modal" href=>Login</a>
-    <a class="navBarItem">Forum</a>
-    <a class="navBarItem">Archives</a>
-    <a class="navBarItem">About</a>
-    <img class="sidebarImg" id="topImg" src="assets/SpiritBombAlone.jpeg"><h1 id='appTitle'>Spirit Bomb <small>Crowdfunding. Concentrated.</small></h1>
-</div>
+      <a class="navBarItem" data-toggle="modal" href=>Login</a>
+      <a class="navBarItem">Forum</a>
+      <a class="navBarItem">Archives</a>
+      <a class="navBarItem">About</a>
+      <img class="sidebarImg" id="topImg" src="assets/SpiritBombAlone.jpeg"><h1 id='appTitle'>Spirit Bomb <small>Crowdfunding. Concentrated.</small></h1>
+    </div>
 
-  <div id="navBar">
+    <div id="navBar">
+    </div>
 
-  </div>
-
-  <hr />
+  
+    <hr />
 
 
   <div id="opponentContent">
@@ -53,28 +54,28 @@
       <div id="opponentHead">
 
 
-      <!--<h3 id="opponentTitle"><strong>Help us purchase the SpiritBomb.com domain name!</strong></h3>
+      <h3 id="opponentTitle"><strong>Help us purchase the SpiritBomb.com domain name!</strong></h3>
       <img class="sidebarImg" id="opponentImg" src="assets/domainPricePic.png">
       <br/>
-      <br/> -->
-      </div>
+      <br/> 
+      </div> <!--#opponentHead closing div>
       
-      <!-- Ideally, the text below will be generated/persisted through our database that generates the topic/theme being contributed to. A photo the the topic and the text body 
+       Ideally, the text below will be generated/persisted through our database that generates the topic/theme being contributed to. A photo the the topic and the text body -->
 
 
 
       <p class="opponentText">We're looking to set up shop at SpiritBomb.com (it just has that ring to it; you know?) and need your help in buying the domain! As of now, the domain is priced at $3,199 (with tax, that will exceed $3200). From the purchase of the domain onwards, all content featured as subjects for SpiritBombs will be community led/voted initiatives.</p> 
       <p class="opponentText">First, we're looking to raise $160, so that the kind people of earth will raise their hands! Please consider contributing to help us meet our goal.</p>
 
-      -->
+     
         
-    </div>
+    </div><!-- #opponentBox closing div -->
 
     <h2>Hands Raised: ${{ amountRaised }} of ${{ opponentValue }}</h2>
 
     <br>
     <br>
-    <!--comment box code -->
+    
     <div id="commentArea" ng-controller='commentsCtrl'>
     <h3>Comments:</h3>
     <div id="commentBox">
@@ -83,15 +84,16 @@
     
     <input type="text" placeholder="Comments" class="textAreas" ng-model="inputText"></input>
     <input type="submit" class="submission" ng-click="postComment()"></input>
-    <br>
-    <br>
-    <br>
-    <br>
-    <hr/>
 
-    <!-- Placeholder for signup functions -->
-  <div ng-controller='authCtrl'>
-    <p>Sign-Up Functionality Placeholder:</p>
+    </div> <!-- #commentArea close -->
+
+  </div> <!-- #opponentContent closing div -->
+
+ 
+
+    <!-- Placeholder for signup & signin functions -->
+  <div id="tempLogin" ng-controller='authCtrl'>
+<!--   <p>Sign-Up Functionality Placeholder:</p>
   <input type="text" placeholder="First Name" class="textAreas" ng-model="firstname"></input>
   <input type="text" placeholder="Last Name" class="textAreas" ng-model="lastname"></input>
     <input type="text" placeholder="Email" class="textAreas" ng-model="eMail"></input>
@@ -99,7 +101,7 @@
     <input type="submit" class="submission" ng-click="postUser()"></input>
     
 
-    <!-- Placeholder for signin functions -->
+  
     <br>
     <p>Sign-in Functionality Placeholder:</p>
     <input type="text" placeholder="Email" class="textAreas" ng-model="inputEmail"></input>
@@ -107,12 +109,16 @@
     <input type="submit" class="submission" ng-click="checkUser()"></input>
 
     <br>
-    <br>
+    <br>  -->
 
-  </div>
+  </div> <!--#authCtrl closing -->
 
-    </div>
-  </div>
+    
+  
+
+  
+
+
 
   <div id="characterBar">
 
@@ -145,15 +151,22 @@
       <img class="sidebarImg" src="./assets/Vegeta.png">
     </div>
           <p class="raiseCost">Vegeta: ${{opponentValue * .27}}</p>
-    <!--placeholders for monetary contributions -->
+    
+
     <input id="contributionField" type="number" placeholder="$ to contribute" ng-model="contribution">
     <input class="submission" type="submit" value="Raise Hands" ng-click="raiseHands(contribution)">
 
-  </div>
+  </div> <!-- #characterBar closing div -->
 
-<!-- PAYMENTS STUFF -->
+
+
+  <hr/>
+
+
+
+
   <div id ="payments" ng-contoller="paymentsCtrl">
-    <p>STRIPE placeholder :)</p>
+    <!-- <p>STRIPE placeholder :)</p>
     <form stripe-form="stripeCallback">
     <input ng-model="name" placeholder="Full Name" />
       <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card" />
@@ -164,13 +177,12 @@
 
     <div ng-if="form.card.$invalid">Error: Invalid card number!</div>
     <div ng-if="form.expiry.$invalid">Error: Invalid expiration date!</div>
-    <div ng-if="form.cvc.$invalid">Error: Invalid CVC!</div>
+    <div ng-if="form.cvc.$invalid">Error: Invalid CVC!</div> -->
 
-  </div>
+  </div>  <!-- #payments closing  tag -->
 
 
-
-  <div id="lowBar">
+  <div id="lowBar"> 
   </div>
 
   <div id="footerBar">
