@@ -96,7 +96,7 @@ var spiritBombControllers = angular.module('spiritBombControllers', ['spiritBomb
 })
 
 
-.controller('authCtrl', function($scope, $http){
+.controller('authCtrl', function($scope, $http, $window){
 
   $scope.postUser = function(){
     var newUser = {
@@ -134,8 +134,9 @@ var spiritBombControllers = angular.module('spiritBombControllers', ['spiritBomb
     $http.post('/signin', aUser)
 
     .success(function(data, status, headers, config){
-        var token = data;
-        console.log(token);
+      if(data.token){
+        $window.localStorage.currentUser = data.token;
+      }
     })
 
       .error(function(data, status) {
