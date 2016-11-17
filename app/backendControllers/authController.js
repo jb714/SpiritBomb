@@ -15,7 +15,6 @@ function tokenForUser(user) {
 exports.signin = function(req, res, next) {
   //User has already had their email and pw auth'd, they just need a token.
   //thankfully, passport saves the token for us in req.user
-  console.log("This is the user token:", tokenForUser(req.user));
   res.send( {token: tokenForUser(req.user)} );
 }
 //controller for db models logic
@@ -36,7 +35,7 @@ exports.signup = function(req, res, next) {
   }
 
    //See if a user with the given email exists
-   User.findOne( {email: email }, function(err, existingUser) {
+   User.findOne( {email: email}, function(err, existingUser) {
     if(err) { 
       return next(err); 
     }
