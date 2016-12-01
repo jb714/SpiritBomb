@@ -134,8 +134,10 @@ var spiritBombControllers = angular.module('spiritBombControllers', ['spiritBomb
     $http.post('/signin', aUser)
 
     .success(function(data, status, headers, config){
-      if(data.token){
-        $window.localStorage.currentUser = data.token;
+      var token = data.token;
+      if(token){
+        $window.localStorage.currentUser = token;
+        $http.defaults.headers.common.Authorization = 'Bearer' + token;
       }
     })
 
