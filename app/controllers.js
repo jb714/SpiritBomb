@@ -14,7 +14,7 @@ var spiritBombControllers = angular.module('spiritBombControllers', ['spiritBomb
 
 .controller('mainCtrl', function($scope, $http){
   $scope.opponentValue = 3200;
-  $scope.opponentValueCopy = 3200;
+  $scope.opponentValueCopy = 3200; 
   $scope.amountRaised = 0;
   $scope.contribution;
 
