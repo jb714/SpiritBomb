@@ -86,48 +86,47 @@
     </div> <!-- #commentArea close -->
 
   </div> <!-- #opponentContent closing div -->
+  
+  <div id ="characterSection">
+     <div id="characterBar">
 
-   <div id="characterBar">
+      <h4 id="lift">Lift your hands! </h4>
+      <div class="charBarImg">
+        <img class="sidebarImg" src="./assets/PeopleOfEarth.png"> 
+      </div>
+      <p class="raiseCost">People of Earth: ${{opponentValue * .05}}</p>
+      <div class="charBarImg">
+        <img class="sidebarImg" src="./assets/YamchaRoshi.png">
+      </div>
+      <p class="raiseCost">Yamcha and Roshi: ${{opponentValue * .10}}</p>
 
-    <h4 id="lift">Lift your hands! </h4>
-    <div class="charBarImg">
-      <img class="sidebarImg" src="./assets/PeopleOfEarth.png"> 
-    </div>
-    <p class="raiseCost">People of Earth: ${{opponentValue * .05}}</p>
-    <div class="charBarImg">
-      <img class="sidebarImg" src="./assets/YamchaRoshi.png">
-    </div>
-    <p class="raiseCost">Yamcha and Roshi: ${{opponentValue * .10}}</p>
+      <div class="charBarImg">
+        <img class="sidebarImg" src="./assets/PiccoloKrillin.png">
+      </div>
+       <p class="raiseCost">Piccolo and Krillin: ${{opponentValue * .15}}</p>
 
-    <div class="charBarImg">
-      <img class="sidebarImg" src="./assets/PiccoloKrillin.png">
-    </div>
-     <p class="raiseCost">Piccolo and Krillin: ${{opponentValue * .15}}</p>
+       <div class="charBarImg">
+        <img class="sidebarImg" src="./assets/gotenTrunks.png">
+      </div>
+         <p class="raiseCost">Goten and Trunks: ${{opponentValue * .20}}</p>
 
-     <div class="charBarImg">
-      <img class="sidebarImg" src="./assets/gotenTrunks.png">
-    </div>
-       <p class="raiseCost">Goten and Trunks: ${{opponentValue * .20}}</p>
+      <div class="charBarImg">
+        <img class="sidebarImg" src="./assets/Gohan.jpg">
+      </div>
+      <p class="raiseCost">Gohan: ${{opponentValue * .23}}</p>
 
-    <div class="charBarImg">
-      <img class="sidebarImg" src="./assets/Gohan.jpg">
-    </div>
-    <p class="raiseCost">Gohan: ${{opponentValue * .23}}</p>
-
-     <div class="charBarImg">
-      <img class="sidebarImg" src="./assets/Vegeta.png">
-    </div>
-          <p class="raiseCost">Vegeta: ${{opponentValue * .27}}</p>
-    
-
-    <input id="contributionField" type="number" placeholder="$ to contribute" ng-model="contribution">
-    <input class="submission" type="submit" value="Raise Hands" ng-click="raiseHands(contribution)">
-
-  </div> <!-- #characterBar closing div -->
- 
+       <div class="charBarImg">
+        <img class="sidebarImg" src="./assets/Vegeta.png">
+      </div>
+            <p class="raiseCost">Vegeta: ${{opponentValue * .27}}</p>
+    </div> 
+        <input class="textAreas" id="contributionField" type="number" placeholder="$ to contribute" ng-model="contribution">
+        <input class="submission" type="submit" value="Raise Hands" ng-click="raiseHands(contribution)">
+  </div>
 
     <!-- Placeholder for signup & signin functions -->
-  <div id="tempLogin" ng-controller='authCtrl'>
+  
+<!--   <div id="tempLogin" ng-controller='authCtrl'>
   <p>Sign-Up Functionality Placeholder:</p>
   <input type="text" placeholder="First Name" class="textAreas" ng-model="firstname"></input>
   <input type="text" placeholder="Last Name" class="textAreas" ng-model="lastname"></input>
@@ -146,7 +145,9 @@
     <br>
     <br> 
 
-  </div> <!--#authCtrl closing -->
+  </div>  -->
+
+  <!--#authCtrl closing -->
 
     
   

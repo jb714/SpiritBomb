@@ -1,5 +1,7 @@
+/* Light gray: #efefef; Dark gray: #333333;  Yellow: #FFD900; Crimson: #D35269; LightBlue: #00CCD6; */
+
 body{
-  background-color: #EFEFEF;
+  background-color: #efefef;
   font-family: arial;
 }
 
@@ -48,7 +50,7 @@ hr{
 }
 
 .submission{
-  background-color: #4FF8FD;
+  background-color: #FFD900;
 }
 
 /*Opponent area */
@@ -114,17 +116,23 @@ hr{
   color: black;
 }
 
+#characterSection{
+  display: inline-block;
+  width: 250px;
+  float: right;
+
+}
 #characterBar{
   width: 200px;
   border: solid black;
   border-radius: 2%;
-  background-color: #4FF8FD;
+  background-color: white;
   text-align: center;
   display: inline-block;
   color: white;
-  float: right;
   margin-top: 80px;
-  margin-bottom: 80px
+  margin-bottom: 80px;
+  float: right;
 }
 .charBarImg{
 /*  border: solid black;*/
@@ -143,6 +151,11 @@ hr{
 
 #contributionField{
   color: black;
+  width: 125px;
+}
+
+#contribute{
+  float: right;
 }
 
 
@@ -158,8 +171,6 @@ hr{
   text-align: center;
   clear:both;
 }
-
-
 
 #tempLogin{
   display: inline-block;
